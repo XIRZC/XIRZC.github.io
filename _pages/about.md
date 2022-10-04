@@ -12,5 +12,4 @@ I am Zicong Xie, a postgraduate student of School of Computer Science from NPU(N
 
 If you have any questions to communicate with me(linux, ocr, textvqa, textcaps, etc.), just feel free for contacting me by left-side email address.
 
-Good luck to my future research life : )
-{: .notice}
+> Good luck to my future research life : )
