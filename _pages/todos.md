@@ -9,5 +9,5 @@ redirect_from:
 
 ## 5/Oct/2022
 
-- [ ] &ensp;English and CS Assignments
-- [X] &ensp;TAP OCRCC&Base Codes Reading, Training and Evaluation
+- English and CS Assignments
+- TAP OCRCC&Base Codes Reading, Training and Evaluation
