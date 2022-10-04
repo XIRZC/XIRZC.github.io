@@ -9,5 +9,5 @@ redirect_from:
 
 ## 5/Oct/2022
 
-- [] 英语专业课过一遍
-- [X] TAP OCRCC&Base 代码阅读、训练和测试
+- [] English and CS Assignments
+- [X] TAP OCRCC&Base Codes Reading, Training and Evaluation
