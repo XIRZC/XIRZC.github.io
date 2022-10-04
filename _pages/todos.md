@@ -1,9 +1,9 @@
 ---
 permalink: /todos/
-title: "My Everyday TODO List : -}"
+title: "My Everyday TODO List"
 author_profile: true
 redirect_from: 
-  - /todos/
+  - /tdl/
   - /todos.html
 ---
 
