@@ -11,8 +11,8 @@ redirect_from:
 
 Education
 ======
-* B.S. in Software Engineering, School of Computer Science, Zhengzhou University, 2018-2022
-* M.S. in Computer Science, School of Computer Science, NorthWestern Polytechnical University, 2022~
+* B.S. in Software Engineering, School of Computer Science, Zhengzhou University, 2018~2022
+* M.S. in Computer Science, School of Computer Science, NorthWestern Polytechnical University, 2022~now
 
 <!--
 Work experience
