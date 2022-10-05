@@ -6,4 +6,5 @@ tags:
   - Paper Reading
 ---
 
+At this post, I will consequently push some notes after reading some salient research papers.
 Coming soon...

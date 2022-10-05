@@ -6,9 +6,8 @@ tags:
   - Linux
 ---
 
-> DWM for window manager, rofi for app launcher, alacritty, kitty and st for terminal, ranger for tui file manager, neovim for editor, firefox and chromium for browser, qv2ray for proxy.
-    
-> KDE for desktop environment, sddm for login or display environment, and there are some theme configurations to beauty it.
+This post is about my own archlinux installation and configuration process from archiso on.
+Updating...
 
 ## Important commands
 

@@ -6,4 +6,5 @@ tags:
   - Pytorch
 ---
 
+This post will record every problem I encountered in learning and using pytorch.
 Coming soon...
