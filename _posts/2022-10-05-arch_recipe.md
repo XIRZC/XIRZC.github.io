@@ -6,12 +6,11 @@ tags:
   - Linux
 ---
 
-## My Favorite OS is ArchLinux 
-    DWM for window manager, rofi for app launcher, alacritty, kitty and st for terminal, ranger for tui file manager, neovim for editor, firefox and chromium for browser, qv2ray for proxy.
+> DWM for window manager, rofi for app launcher, alacritty, kitty and st for terminal, ranger for tui file manager, neovim for editor, firefox and chromium for browser, qv2ray for proxy.
     
-    KDE for desktop environment, sddm for login or display environment, and there are some theme configurations to beauty it.
-    
-== Important commands ==
+> KDE for desktop environment, sddm for login or display environment, and there are some theme configurations to beauty it.
+
+## Important commands
 
 Here are some pre-utils to use:
 
@@ -36,9 +35,9 @@ Here are six important successive commands:
 Here are some other useful commands for daily use:
 - `timedatectl -set-local-rtc 1 --adjust-system-clock` for fix windows&linux timezone conflict(localtime for windows, utc for linux)
 - `sudo pacman -R $(pacman -Qtdq)` for delete some not useful dependency packages
-- [[https://zhongguo.eskere.club/%E5%A6%82%E4%BD%95%E6%B8%85%E7%90%86-arch-linux-%E4%B8%AD%E7%9A%84%E5%8C%85%E7%BC%93%E5%AD%98/2021-09-03/|This link has some useful commands for clean pacman cache]]
+- [This link has some useful commands for clean pacman cache](https://zhongguo.eskere.club/%E5%A6%82%E4%BD%95%E6%B8%85%E7%90%86-arch-linux-%E4%B8%AD%E7%9A%84%E5%8C%85%E7%BC%93%E5%AD%98/2021-09-03/)
  
-== Efficient packages or apps ==
+## Efficient packages or apps
 
 - `flameshot` for screenshot
 - `ranger` for file-related manipulation
