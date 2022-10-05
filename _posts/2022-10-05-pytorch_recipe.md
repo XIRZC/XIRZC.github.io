@@ -7,4 +7,4 @@ tags:
 ---
 
 This post will record every problem I encountered in learning and using pytorch.
-Coming soon...
+**Coming soon...**

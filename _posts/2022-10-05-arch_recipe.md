@@ -7,7 +7,7 @@ tags:
 ---
 
 This post is about my own archlinux installation and configuration process from archiso on.
-Updating...
+**Updating...**
 
 ## Important commands
 
