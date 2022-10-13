@@ -29,11 +29,15 @@ This post is about my own archlinux installation and configuration process from 
 6. Run `clash` and this will automatically generating essential dbs and config file for using, and `vim ~/.config/clash/clash.yaml`, paste copied configuration, and then modify the socks port to 1089, at last, run clash at any terminal
 7. Run `git config --global http.proxy 127.0.0.1:7890 && git config --global https.proxy 127.0.0.1:7890`
 8. Run `chezmoi init --apply https://github.com/XIRZC/dotfiles.git`, and open [Github personal access tokens](https://github.com/settings/tokens), login and generate a token as password
-9. Run `sudo pacman -S fish zsh qtile ranger feh neovim rofi picom alacritty kitty`
+9. Run `sudo pacman -S fish zsh qtile ranger feh neovim rofi picom alacritty kitty` for preliminary configuration
 10. Open [DistroTube Gitlab: Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts) and follow the README guide to install colorscript in the bin, specifically by `cd ~/Downloads && git clone https://gitlab.com/dwt1/shell-color-scripts.git && cd shell-color-scripts && sudo make install`
 11. Run `paru -S nerd-font-complete` for nerdfont support
+12. Run `sudo pacman -S flameshot lazygit neofetch lolcat figlet cowsay blueman screenkey mpv pulseaudio zotero sioyek networkmanager network-manager-applet fcitx fcitx-configtool fcitx-googlepinyin code`
+13. Run `cd ~/Downloads/ && git clone https://github.com/vinceliuice/grub2-themes && cd grub2-themes && sudo ./install.sh -t whitesur -s 2k -b && grub-install --target=x86_64-efi --efi-directory=/boot/efi` for grub theme beatify([grub2-themes link](https://github.com/vinceliuice/grub2-themes))
+14. Run `cd ~ && rm -rf Pictures && git clone https:/github.com/XIRZC/mywp.git Pictures` for feh directory setting
+15. Run `git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2` for ranger icon
 
-## Important commands
+## Original Archlinux Live ISO useful commands
 
 Here are some pre-utils to use:
 
@@ -60,32 +64,3 @@ Here are some other useful commands for daily use:
 - `sudo pacman -R $(pacman -Qtdq)` for delete some not useful dependency packages
 - [This link has some useful commands for clean pacman cache](https://zhongguo.eskere.club/%E5%A6%82%E4%BD%95%E6%B8%85%E7%90%86-arch-linux-%E4%B8%AD%E7%9A%84%E5%8C%85%E7%BC%93%E5%AD%98/2021-09-03/)
  
-## Efficient packages or apps
-
-- `flameshot` for screenshot
-- `ranger` for file-related manipulation
-- `zsh` for well-performed command-line use
-- `lazygit` for convenient git operation
-- `neovim` for better vim
-- `gvim` for some great experience compared with conventional vim(here especially for archlinux copyboard sharing between vim and system)
-- `spacevim` for easy-use vim
-- `dwm` for the best window manager
-- `alacritty` for well-looking terminal client
-- `kitty` for previewing pictures and visual parts
-- `rofi` for weel-looking app launcher
-- `neofetch` for printing current system configuration with great appearance
-- `yay` for aur package installer
-- `qv2ray & v2ray` for good vpn client
-- `nerd-font-complete(aur)` for whole nerd-font support
-- `fcitx & google-pinyin` for chinese input
-- `sddm & kde` for kde desktop environment
-- `blueman` for bluetooth connection
-- `pulseaudio` for audio manipulation
-- `spotify` for some free music
-- `networkmanager & network-manager-applet` for visual wifi connection
-- `conda` for virtual python environment
-- `feh` for automative wallpaper change
-- `zotero` for paper managment
-- `screenkey` for keyboard monitor
-- `picom` for great apperance
-- `mpv` for great video player
