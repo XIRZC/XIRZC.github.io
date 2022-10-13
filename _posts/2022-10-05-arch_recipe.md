@@ -10,6 +10,29 @@ This post is about my own archlinux installation and configuration process from 
 
 **Updating...**
 
+## Installation Procedure
+
+1. Download Newest [Archlinux GUI Distribution ISO](https://archlinuxgui.in/)
+2. Prepare an U Disk for [Ventoy](https://www.ventoy.net/cn/index.html) installation
+3. Place all your OS iso files and PE into the available ventoy partition
+4. Reboot and press corresponding mainboard keys to enter boot option interface
+5. Select U Disk boot option and select your OS option
+6. Just install by the `Install Arch Linux` software
+
+## Configuration Steps after Installation
+
+1. Run `sudo pacman -Syyu` for update all packages to avoid some possible errors
+2. Run `sudo vim /etc/pacman.conf` for insert [archlinuxcn](https://github.com/archlinuxcn/mirrorlist-repo) and uncomment multitest source
+3. Open [Archlinux Mirrorlist](https://archlinux.org/mirrorlist/) for selelcting Chinese mirrorlist and place the fastest in the first place, then run `sudo pacman -Syyu && paru` for updating all packages
+4. Run `sudo pacman -S vim clash chezmoi` for facilitating successive steps
+5. Jump [V2Free](https://w1.v2free.net/) for getting clash configuration
+6. Run `clash` and this will automatically generating essential dbs and config file for using, and `vim ~/.config/clash/clash.yaml`, paste copied configuration, and then modify the socks port to 1089, at last, run clash at any terminal
+7. Run `git config --global http.proxy 127.0.0.1:7890 && git config --global https.proxy 127.0.0.1:7890`
+8. Run `chezmoi init --apply https://github.com/XIRZC/dotfiles.git`, and open [Github personal access tokens](https://github.com/settings/tokens), login and generate a token as password
+9. Run `sudo pacman -S fish zsh qtile ranger feh neovim rofi picom alacritty kitty`
+10. Open [DistroTube Gitlab: Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts) and follow the README guide to install colorscript in the bin, specifically by `cd ~/Downloads && git clone https://gitlab.com/dwt1/shell-color-scripts.git && cd shell-color-scripts && sudo make install`
+11. Run `paru -S nerd-font-complete` for nerdfont support
+
 ## Important commands
 
 Here are some pre-utils to use:
