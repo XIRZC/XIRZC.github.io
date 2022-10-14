@@ -10,7 +10,7 @@ This post is about my own archlinux installation and configuration process from 
 
 **Updating...**
 
-![](images/banner.png)
+![](https://xirzc.github.io/images/banner.png)
 
 ## Installation Procedure
 
