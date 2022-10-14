@@ -41,7 +41,7 @@ This post is about my own archlinux installation and configuration process from 
 18. Run `cd ~/Downloads && axel -n 10 https://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run && chmod +x cuda_10.2.89_440.33.01_linux.run && sudo ./cuda_10.2.89_440.33.01_linux.run` for cuda 10.2 installation([cuda 10.2 download link](https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal))
 19. Run `cd ~/Downloads && axel -n 10 https://docs.conda.io/en/latest/miniconda.html#linux-installers && chmod +x Miniconda3-latest-Linux-x86_64.sh && ./Miniconda3-latest-Linux-x86_64.sh` for miniconda installation([minconda download link](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html))
 21. Follow the instruction in [Tsinghua Conda](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/) and [Tsinghua Pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/) for conda and pip acceleration
-20. Run `conda create -n com python=3.7 && conda activate com && conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch` for configure a common `python=3.7, pytorch=1.8, torchvision=0.9, torchaudio=0.8, cudatoolkit=10.2` python virtual environment
+20. Run `conda create -n com python=3.7 && conda activate com && conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch` for configure a common `python=3.7, pytorch=1.8, torchvision=0.9, torchaudio=0.8, cudatoolkit=10.2` python virtual environment([pytorch previous version link](https://pytorch.org/get-started/previous-versions/#v180))
 
 > Reference: https://github.com/antoniosarosi/dotfiles
 
