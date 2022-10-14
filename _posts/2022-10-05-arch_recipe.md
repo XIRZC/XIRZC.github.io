@@ -7,9 +7,10 @@ tags:
 ---
 
 This post is about my own archlinux installation and configuration process from archiso on.
-![](../images/banner.png)
 
 **Updating...**
+
+![](../images/banner.png)
 
 ## Installation Procedure
 
