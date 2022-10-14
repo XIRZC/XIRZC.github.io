@@ -10,7 +10,7 @@ This post is about my own archlinux installation and configuration process from 
 
 **Updating...**
 
-![](../images/banner.png)
+![](images/banner.png)
 
 ## Installation Procedure
 
