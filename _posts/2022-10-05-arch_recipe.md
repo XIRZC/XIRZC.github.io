@@ -44,6 +44,7 @@ This post is about my own archlinux installation and configuration process from 
 21. Follow the instruction in [Tsinghua Conda](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/) and [Tsinghua Pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/) for conda and pip acceleration
 22. Run `conda create -n com python=3.7 && conda activate com && conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch` for configure a common `python=3.7, pytorch=1.8, torchvision=0.9, torchaudio=0.8, cudatoolkit=10.2` python virtual environment([pytorch previous version link](https://pytorch.org/get-started/previous-versions/#v180))
 23. Run `timedatectl set-local-rtc 1 --adjust-system-clock` for fix windows&linux timezone conflict(localtime for windows, utc for linux)
+24. Config Zotero by validate by webdav `dav.jianguoyun.com/dav`, and then opening [Jianguoyun setting link](https://www.jianguoyun.com/d/home#/safety) for query password
 
 > Reference: https://github.com/antoniosarosi/dotfiles
 
