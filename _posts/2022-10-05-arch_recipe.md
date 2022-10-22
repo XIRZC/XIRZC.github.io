@@ -47,6 +47,8 @@ This post is about my own archlinux installation and configuration process from 
 22. Run `conda create -n com python=3.7 && conda activate com && conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch` for configure a common `python=3.7, pytorch=1.8, torchvision=0.9, torchaudio=0.8, cudatoolkit=10.2` python virtual environment([pytorch previous version link](https://pytorch.org/get-started/previous-versions/#v180))
 23. Run `sudo timedatectl set-local-rtc true set-ntp true` for fix windows&linux timezone conflict(localtime for windows, utc for linux)
 24. Config Zotero by validate by webdav `dav.jianguoyun.com/dav`, and then opening [Jianguoyun setting link](https://www.jianguoyun.com/d/home#/safety) for query password
+25. Run `sudo pacman -S openssh && sudo systemctl start sshd && sudo systemctl enable sshd`, and if you want to change the binding port, just run `sudo vi /etc/ssh/sshd_config` and uncomment the Port line and change this value
+26. Run `sudo pacman -S tigervnc && vncpasswd`, then run `echo 1:mrxir >> /etc/tigervnc/vncserver.users && echo session=lxqt \n geometry=1920x1080 \n localhost \n alwaysshared > ~/.vnc/config && sudo systemctl start vncserver@1.service && sudo systemctl enable vncserver@1.service`, and you just need to open `vncviewer` to enter your `ip addr` ipv4 address follow by `:1` such as `vncviewer 10.31.164.163:1`([tigervnc archwiki](https://wiki.archlinux.org/title/TigerVNC))
 
 > Reference: https://github.com/antoniosarosi/dotfiles
 
