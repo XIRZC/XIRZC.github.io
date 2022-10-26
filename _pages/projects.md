@@ -7,4 +7,4 @@ redirect_from:
   - /proj.html
 ---
 
-- Referring Expression Comprehension Based Visual Question Answering([Codes](https://github.com/XIRZC/rec2vqa.git))
+- Referring Expression Comprehension Based Visual Question Answering ([Codes](https://github.com/XIRZC/rec2vqa.git))
