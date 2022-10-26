@@ -6,26 +6,26 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Competitions"
+    url: /competitions/
+
   - title: "Projects"
     url: /projects/
 
-  - title: "Comptitions"
-    url: /comptitions/
+  - title: "CV"
+    url: /cv/
+        
+# - title: "Todos"
+#   url: /todos/
+    
+#  - title: "Guide"
+#    url: /markdown/
 
 #  - title: "Talks"
 #    url: /talks/    
-#
+
 #  - title: "Teaching"
 #    url: /teaching/    
-#    
+    
 #  - title: "Portfolio"
 #    url: /portfolio/
-        
-  # - title: "Todos"
-  #   url: /todos/
-    
-  - title: "CV"
-    url: /cv/
-    
-  # - title: "Guide"
-  #   url: /markdown/
