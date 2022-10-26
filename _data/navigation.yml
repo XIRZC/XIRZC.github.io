@@ -1,14 +1,17 @@
 # main links links
 main:
-#  - title: "Publications"
-#    url: /publications/
-#
-#  - title: "Projects"
-#    url: /projects/
-#
-#  - title: "Awards"
-#    url: /awards/
-#
+  - title: "Notes"
+    url: /tag-archive/
+
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Projects"
+    url: /projects/
+
+  - title: "Comptitions"
+    url: /comptitions/
+
 #  - title: "Talks"
 #    url: /talks/    
 #
@@ -18,14 +21,11 @@ main:
 #  - title: "Portfolio"
 #    url: /portfolio/
         
-  - title: "Notes"
-    url: /tag-archive/
-
-  - title: "Todos"
-    url: /todos/
+  # - title: "Todos"
+  #   url: /todos/
     
   - title: "CV"
     url: /cv/
     
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/
