@@ -7,4 +7,4 @@ redirect_from:
   - /proj.html
 ---
 
-Haven't yet :(
+Haven't any yet :(

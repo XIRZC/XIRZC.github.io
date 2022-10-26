@@ -7,4 +7,4 @@ redirect_from:
   - /compt.html
 ---
 
-Haven't yet :(
+Haven't any yet :(
