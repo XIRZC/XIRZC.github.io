@@ -27,6 +27,7 @@ This post is about my own archlinux installation and configuration process from 
 
 - Run `sudo vim /etc/pacman.conf` for insert [archlinuxcn](https://github.com/archlinuxcn/mirrorlist-repo) and uncomment multitest source
 - Open [Archlinux Mirrorlist](https://archlinux.org/mirrorlist/) for selelcting Chinese mirrorlist and place the fastest in the first place, then run `sudo pacman -Syyu && sudo pacman -S archlinux-keyring archlinuxcn-keyring && sudo pacman -Syyu` for updating all packages
+- Run `sudo Pacman -Rdd mutter` to solve mutter and mutter-performance signature conflict problem by archlinuxgui iso mirrors
 
 **VPN Proxy Preparation:**
 
