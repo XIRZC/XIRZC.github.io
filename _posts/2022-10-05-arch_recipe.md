@@ -23,33 +23,67 @@ This post is about my own archlinux installation and configuration process from 
 
 ## Configuration Steps after Installation
 
-1. Run `sudo pacman -Syyu` for update all packages to avoid some possible errors
-2. Run `sudo vim /etc/pacman.conf` for insert [archlinuxcn](https://github.com/archlinuxcn/mirrorlist-repo) and uncomment multitest source
-3. Open [Archlinux Mirrorlist](https://archlinux.org/mirrorlist/) for selelcting Chinese mirrorlist and place the fastest in the first place, then run `sudo pacman -Syyu && sudo pacman -S archlinux-keyring archlinuxcn-keyring && sudo pacman -Syyu` for updating all packages
-4. Run `sudo pacman -S vim clash chezmoi` for facilitating successive steps
-5. Open [V2Free](https://w1.v2free.net/) for getting clash configuration
-6. Run `clash` and this will automatically generating essential dbs and config file for using, and `vim ~/.config/clash/clash.yaml`, paste copied configuration, and then modify the socks port to 1089, at last, run clash at any terminal
-8. Run `paru` for paru updating packages
-9. Run `git config --global http.proxy 127.0.0.1:7890 && git config --global https.proxy 127.0.0.1:7890`
-10. Run `chezmoi init --apply https://github.com/XIRZC/dotfiles.git`, and open [Github personal access tokens](https://github.com/settings/tokens), login and generate a token as password
-11. Run `sudo pacman -S qtile alacritty kitty fish zsh ranger feh neovim rofi picom starship yarn npm xclip python3 ruby perl python-pip && pip install pynvim psutil && gem install neovim` for preliminary configuration
-12. Open [DistroTube Gitlab: Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts) and follow the README guide to install colorscript in the bin, specifically by `cd ~/Downloads && git clone https://gitlab.com/dwt1/shell-color-scripts.git && cd shell-color-scripts && sudo make install`
-13. Run `paru -S nerd-fonts-complete && sudo pacman -S wqy-microhei wqy-zenhei adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts` for nerdfont and chinese font support([chinese font archlinux wiki page](https://wiki.archlinux.org/title/Localization/Simplified_Chinese))
-14. Run `sudo pacman -S htop exa bat dust duf procs ripgrep httpie kdiff3 neofetch lolcat figlet toilet cowsay blueman pulseaudio pavucontrol pamixer brightnessctl udiskie ntfs-3g volumeicon cbatticon libnotify notification-daemon networkmanager network-manager-applet fcitx fcitx-configtool fcitx-googlepinyin tmux screen axel lazygit flameshot screenkey typespeed nnn zotero sioyek thunar dolphin code zathura mpv vlc gimp filezilla` for all kinds of useful packages
-15. Run `cd ~/Downloads/ && git clone https://github.com/vinceliuice/grub2-themes && cd grub2-themes && sudo ./install.sh -t whitesur -s 2k -b && grub-install --target=x86_64-efi --efi-directory=/boot/efi` for grub theme beatify([grub2-themes link](https://github.com/vinceliuice/grub2-themes))
-16. Run `cd ~ && rm -rf Pictures && git clone https://ghproxy.com/https:/github.com/XIRZC/mywp.git Pictures` for feh directory setting
-17. Run `git clone https://ghproxy.com/https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2` for ranger icon
-18. Run `curl https://ghproxy.com/https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish` for oh-my-fish installation
-19. Run `starship preset pastel-powerline > ~/.config/starship.toml` or `starship preset nerd-font-symbols > ~/.config/starship.toml` for starship command line prompt configuration([starship link](https://starship.rs/presets/))
-20. Run `cd ~/Downloads && axel -n 10 https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run && chmod +x cuda_11.3.0_465.19.01_linux.run && sudo pacman -R gcc && sudo pacman -S gcc10 nvidia nvidia-settings nvidia-utils nvtop && sudo ln -s /usr/bin/gcc10 /usr/bin/gcc && sudo ./cuda_11.3.0_465.19.01_linux.run` for cuda 11.3 installation without selecting driver within run file([cuda 11.3 download link](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local), [gcc compatible version with cuda version](https://stackoverflow.com/questions/6622454/cuda-incompatible-with-my-gcc-version))
-21. Run `cd ~/Downloads && axel -n 10 https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh && chmod +x Miniconda3-py37_4.12.0-Linux-x86_64.sh && ./Miniconda3-py37_4.12.0-Linux-x86_64.sh` for miniconda installation([minconda download link](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html))
-21. Follow the instruction in [Tsinghua Conda](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/) and [Tsinghua Pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/) for conda and pip acceleration
-22. Run `conda create -n com python=3.7 && conda activate com && conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch` for configure a common `python=3.7, pytorch=1.8, torchvision=0.9, torchaudio=0.8, cudatoolkit=10.2` python virtual environment([pytorch previous version link](https://pytorch.org/get-started/previous-versions/#v180))
-23. Run `sudo timedatectl set-local-rtc true set-ntp true` for fix windows&linux timezone conflict(localtime for windows, utc for linux)
-24. Config Zotero by validate by webdav `dav.jianguoyun.com/dav`, and then opening [Jianguoyun setting link](https://www.jianguoyun.com/d/home#/safety) for query password
-25. Run `sudo pacman -S openssh && sudo systemctl start sshd && sudo systemctl enable sshd`, and if you want to change the binding port, just run `sudo vi /etc/ssh/sshd_config` and uncomment the Port line and change this value
-26. Run `sudo pacman -S docker docker-compose nvidia-container-toolkit && paru -S nvidia-container-runtime && sudo cp ~/.config/docker/daemon.json /etc/docker/daemon.json && sudo systemctl enable docker && sudo systemctl start docker` for install and config docker
-26. Run `sudo pacman -S tigervnc && vncpasswd`, then run `echo 1:mrxir >> /etc/tigervnc/vncserver.users && echo session=lxqt \n geometry=1920x1080 \n localhost \n alwaysshared > ~/.vnc/config && sudo systemctl start vncserver@1.service && sudo systemctl enable vncserver@1.service`, and you just need to open `vncviewer` to enter your `ip addr` ipv4 address follow by `:1` such as `vncviewer 10.31.164.163:1`([tigervnc archwiki](https://wiki.archlinux.org/title/TigerVNC))
+**Pacman Mirror Preparation:**
+
+- Run `sudo vim /etc/pacman.conf` for insert [archlinuxcn](https://github.com/archlinuxcn/mirrorlist-repo) and uncomment multitest source
+- Open [Archlinux Mirrorlist](https://archlinux.org/mirrorlist/) for selelcting Chinese mirrorlist and place the fastest in the first place, then run `sudo pacman -Syyu && sudo pacman -S archlinux-keyring archlinuxcn-keyring && sudo pacman -Syyu` for updating all packages
+
+**VPN Proxy Preparation:**
+
+- Run `sudo pacman -S vim clash chezmoi` for facilitating successive steps
+- Open [V2Free](https://w1.v2free.net/) for getting clash configuration
+- Run `clash` and this will automatically generating essential dbs and config file for using, and `vim ~/.config/clash/clash.yaml`, paste copied configuration, and then modify the socks port to 1089, at last, run clash at any terminal
+- Run `paru` for paru updating packages
+- Run `git config --global http.proxy 127.0.0.1:7890 && git config --global https.proxy 127.0.0.1:7890`
+
+**Chezmoi Dotfiles Pulling and Applying:**
+
+- Run `chezmoi init --apply https://github.com/XIRZC/dotfiles.git`, and open [Github personal access tokens](https://github.com/settings/tokens), login and generate a token as password
+
+**Softwares and Packages Installation:**
+
+- Run `sudo pacman -S qtile alacritty kitty fish zsh ranger feh neovim rofi picom starship yarn npm xclip python3 ruby perl python-pip && pip install pynvim psutil && gem install neovim` for preliminary configuration
+- Run `sudo pacman -S htop exa bat dust duf procs ripgrep httpie kdiff3 neofetch lolcat figlet toilet cowsay blueman pulseaudio pavucontrol pamixer brightnessctl udiskie ntfs-3g volumeicon cbatticon libnotify notification-daemon networkmanager network-manager-applet fcitx fcitx-configtool fcitx-googlepinyin tmux screen axel lazygit flameshot screenkey typespeed nnn zotero sioyek thunar dolphin code zathura mpv vlc gimp filezilla && paru -S boxes` for all kinds of useful packages
+
+**Beautify:**
+
+- Run `cd ~/Downloads/ && git clone https://github.com/vinceliuice/grub2-themes && cd grub2-themes && sudo ./install.sh -t whitesur -s 2k -b && grub-install --target=x86_64-efi --efi-directory=/boot/efi` for grub theme beatify([grub2-themes link](https://github.com/vinceliuice/grub2-themes))
+- Run `paru -S nerd-fonts-complete && sudo pacman -S wqy-microhei wqy-zenhei adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts` for nerdfont and chinese font support([chinese font archlinux wiki page](https://wiki.archlinux.org/title/Localization/Simplified_Chinese))
+- Open [DistroTube Gitlab: Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts) and follow the README guide to install colorscript in the bin, specifically by `cd ~/Downloads && git clone https://gitlab.com/dwt1/shell-color-scripts.git && cd shell-color-scripts && sudo make install`
+- Run `cd ~ && rm -rf Pictures && git clone https://ghproxy.com/https:/github.com/XIRZC/mywp.git Pictures` for feh directory setting
+- Run `git clone https://ghproxy.com/https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2` for ranger icon
+
+**Fish Configuration:**
+
+- Run `curl https://ghproxy.com/https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish` for oh-my-fish installation
+- Run `starship preset pastel-powerline > ~/.config/starship.toml` or `starship preset nerd-font-symbols > ~/.config/starship.toml` for starship command line prompt configuration([starship link](https://starship.rs/presets/))
+
+**Cuda, Conda and PyTorch Installation:**
+
+- Run `cd ~/Downloads && axel -n 10 https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run && chmod +x cuda_11.3.0_465.19.01_linux.run && sudo pacman -R gcc && sudo pacman -S gcc10 nvidia nvidia-settings nvidia-utils nvtop && sudo ln -s /usr/bin/gcc10 /usr/bin/gcc && sudo ./cuda_11.3.0_465.19.01_linux.run` for cuda 11.3 installation without selecting driver within run file([cuda 11.3 download link](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local), [gcc compatible version with cuda version](https://stackoverflow.com/questions/6622454/cuda-incompatible-with-my-gcc-version))
+- Run `cd ~/Downloads && axel -n 10 https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh && chmod +x Miniconda3-py37_4.12.0-Linux-x86_64.sh && ./Miniconda3-py37_4.12.0-Linux-x86_64.sh` for miniconda installation([minconda download link](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html))
+- Follow the instruction in [Tsinghua Conda](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/) and [Tsinghua Pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/) for conda and pip acceleration
+- Run `conda create -n com python=3.7 && conda activate com && conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch` for configure a common `python=3.7, pytorch=1.8, torchvision=0.9, torchaudio=0.8, cudatoolkit=10.2` python virtual environment([pytorch previous version link](https://pytorch.org/get-started/previous-versions/#v180))
+
+**DualBoot Time Fixing:**
+
+- Run `sudo timedatectl set-local-rtc true set-ntp true` for fix windows&linux timezone conflict(localtime for windows, utc for linux)
+
+**Zotero Preparation:**
+
+- Config Zotero by validate by webdav `dav.jianguoyun.com/dav`, and then opening [Jianguoyun setting link](https://www.jianguoyun.com/d/home#/safety) for query password
+
+**Remote SSH Connecting Configuration:**
+
+- Run `sudo pacman -S openssh && sudo systemctl start sshd && sudo systemctl enable sshd`, and if you want to change the binding port, just run `sudo vi /etc/ssh/sshd_config` and uncomment the Port line and change this value
+
+**Docker and Nvidia Container Installation and Configuration:**
+
+- Run `sudo pacman -S docker docker-compose nvidia-container-toolkit && paru -S nvidia-container-runtime && sudo cp ~/.config/docker/daemon.json /etc/docker/daemon.json && sudo systemctl enable docker && sudo systemctl start docker` for install and config docker
+
+**Remote VNC Installation and Configuration:**
+
+- Run `sudo pacman -S tigervnc && vncpasswd`, then run `echo 1:mrxir >> /etc/tigervnc/vncserver.users && echo session=lxqt \n geometry=1920x1080 \n localhost \n alwaysshared > ~/.vnc/config && sudo systemctl start vncserver@1.service && sudo systemctl enable vncserver@1.service`, and you just need to open `vncviewer` to enter your `ip addr` ipv4 address follow by `:1` such as `vncviewer 10.31.164.163:1`([tigervnc archwiki](https://wiki.archlinux.org/title/TigerVNC))
 
 > Reference: https://github.com/antoniosarosi/dotfiles
 
