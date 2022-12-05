@@ -33,6 +33,7 @@ This post is about my own archlinux installation and configuration process from 
 
 - Run `sudo pacman -S vim clash chezmoi` for facilitating successive steps
 - Open [V2Free](https://w1.v2free.net/) for getting clash configuration
+- Run `wget https://ghproxy.com/https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb ~/.config/clash/` for downloading essential files for clash with mirror
 - Run `clash` and this will automatically generating essential dbs and config file for using, and `vim ~/.config/clash/clash.yaml`, paste copied configuration, and then modify the socks port to 1089, at last, run clash at any terminal
 - Run `paru` for paru updating packages
 - Run `git config --global http.proxy 127.0.0.1:7890 && git config --global https.proxy 127.0.0.1:7890`
