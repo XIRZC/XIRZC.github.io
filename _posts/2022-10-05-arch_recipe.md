@@ -44,8 +44,8 @@ This post is about my own archlinux installation and configuration process from 
 
 **Softwares and Packages Installation:**
 
-- Run `sudo pacman -S qtile alacritty kitty fish zsh ranger feh neovim rofi picom starship yarn npm xclip python3 ruby perl python-pip && pip install pynvim psutil && gem install neovim` for preliminary configuration
-- Run `sudo pacman -S htop exa bat dust duf procs ripgrep httpie kdiff3 neofetch lolcat figlet toilet cowsay blueman pulseaudio pavucontrol pamixer brightnessctl udiskie ntfs-3g volumeicon cbatticon libnotify notification-daemon networkmanager network-manager-applet fcitx fcitx-configtool fcitx-googlepinyin tmux screen axel lazygit flameshot screenkey typespeed nnn zotero sioyek thunar dolphin code zathura mpv vlc gimp filezilla && paru -S boxes` for all kinds of useful packages
+- Run `sudo pacman -S qtile alacritty kitty fish zsh ranger feh neovim rofi picom starship yarn npm xclip python3 ruby perl python-pip && pip install pynvim psutil && gem install neovim && paru -S hyprland-git waybar-experimental-git dunst swaylock-effects swayidle light brillo grim swappy slurp rofi-emoji kbct` for preliminary configuration
+- Run `sudo pacman -S htop btop exa bat dust duf procs ripgrep httpie kdiff3 neofetch lolcat figlet toilet cowsay blueman pulseaudio pavucontrol pamixer brightnessctl udiskie ntfs-3g volumeicon cbatticon libnotify notification-daemon networkmanager network-manager-applet fcitx fcitx-configtool fcitx-googlepinyin tmux screen axel lazygit flameshot screenkey typespeed nnn zotero sioyek thunar dolphin code zathura mpv vlc gimp filezilla && paru -S boxes cmatrix cava` for all kinds of useful packages
 
 **Beautify:**
 
